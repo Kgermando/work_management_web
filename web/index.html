@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="work_management_web">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="PAM TECH est logiciel de ressource humaines">
+  <meta name="description" content="PAM TECH est logiciel de Finances">
+  <meta name="description" content="PAM TECH est logiciel de Comptabilite">
+  <meta name="description" content="PAM TECH est logiciel de Budgets">
+  <meta name="description" content="PAM TECH est logiciel de Projets">
+  <meta name="description" content="PAM TECH est logiciel de Exploitations">
+  <meta name="description" content="PAM TECH est logiciel de logistiques">
+  <meta name="description" content="PAM TECH est logiciel de Commerciale">
+  <meta name="description" content="PAM TECH est logiciel de Marketing">
+  <meta name="description" content="PAM TECH est logiciel pour entreprise">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="PAM TECH est Plateform  ressource humaines">
+  <meta name="description" content="PAM TECH est Plateform  Finances">
+  <meta name="description" content="PAM TECH est Plateform  Comptabilite">
+  <meta name="description" content="PAM TECH est Plateform  Budgets">
+  <meta name="description" content="PAM TECH est Plateform  Projets">
+  <meta name="description" content="PAM TECH est Plateform  Exploitations">
+  <meta name="description" content="PAM TECH est Plateform  logistiques">
+  <meta name="description" content="PAM TECH est Plateform  Commerciale">
+  <meta name="description" content="PAM TECH est Plateform  Marketing">
+  <meta name="description" content="PAM TECH est Plateform for entreprise">
+  <meta name="author" content="Eventdrc Technology">
+  
+  <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+  <meta property="og:site_name" content="" /> <!-- website name -->
+  <meta property="og:site" content="" /> <!-- website link -->
+  <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+  <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+  <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+  <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+  <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>work_management_web</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    var serviceWorkerVersion = null;
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+  <style type="text/css">
+    body,
+    html {
+      height: 100%;
+    }
+  
+    .app-loading {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  
+    .app-loading .spinner {
+      height: 200px;
+      width: 200px;
+      animation: rotate 2s linear infinite;
+      transform-origin: center center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  
+    .app-loading .spinner .path {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      animation: dash 1.5s ease-in-out infinite;
+      stroke-linecap: round;
+      stroke: #ddd;
+    }
+  
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+  
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+      }
+  
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        }
+      }).then(function(engineInitializer) {
+        return engineInitializer.initializeEngine();
+      }).then(function(appRunner) {
+        return appRunner.runApp();
+      });
+    });
+  </script>
+</body>
+</html>
