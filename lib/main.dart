@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_localizations/flutter_localizations.dart'
     show GlobalMaterialLocalizations;
 import 'package:flutter/material.dart'; 
@@ -7,10 +8,14 @@ import 'package:work_management_web/src/providers/controller.dart';
 import 'package:work_management_web/src/providers/theme_provider.dart';
 import 'package:work_management_web/src/routes/routes.dart';
 import 'package:work_management_web/src/utils/info_system.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   setPathUrlStrategy();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.web,
+  );
   runApp(const MyApp());
 }
 
@@ -28,10 +33,11 @@ class MyApp extends StatelessWidget {
         builder: (context, _) {
           final themeProvider = Provider.of<ThemeProvider>(context);
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: InfoSystem().name(),
             themeMode: themeProvider.themeMode,
             theme: MyThemes.lightTheme,
-            darkTheme: MyThemes.darkTheme,
+            // darkTheme: MyThemes.darkTheme,
             initialRoute: SolutionRoutes.presentation,
             routes: routes,
             localizationsDelegates: GlobalMaterialLocalizations.delegates,

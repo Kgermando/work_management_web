@@ -11,18 +11,20 @@ class CardIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bodyMedium = Theme.of(context).textTheme.bodyMedium;
-    final bodySmall = Theme.of(context).textTheme.bodySmall;
-    return SizedBox(
-      // height: 200,
+    final headlineSmall = Theme.of(context).textTheme.headlineSmall;
+    final bodyLarge = Theme.of(context).textTheme.bodyLarge;
+    return Container(
+      // color: Colors.amber,
+      // height: 100,
+      padding: const EdgeInsets.all(p10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Icon(icon, color: Colors.amber.shade700, size: 30),
           const SizedBox(height: p20),
-          Text(title, style: bodyMedium),
+          Text(title, style: headlineSmall!.copyWith(color: Colors.black)),
           const SizedBox(height: p20),
-          Text(resume, style: bodySmall),
+          Text(resume, style: bodyLarge),
         ],
       ),
     );

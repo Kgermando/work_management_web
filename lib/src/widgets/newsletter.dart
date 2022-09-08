@@ -12,7 +12,7 @@ class NewsLetter extends StatefulWidget {
 class _NewsLetterState extends State<NewsLetter> {
   final _formKey = GlobalKey<FormState>();
   bool isLoading = false;
-  
+
   TextEditingController emailController = TextEditingController();
 
   @override
@@ -24,47 +24,78 @@ class _NewsLetterState extends State<NewsLetter> {
   @override
   Widget build(BuildContext context) {
     final bodySmall = Theme.of(context).textTheme.bodySmall;
-    return Container(
-      margin: const EdgeInsets.only(top: p50),
-      child: Form(
-        key: _formKey,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: 600,
-              child: Column(
-                children: [
-                  text1Widget(),
-                  const SizedBox(height: p20),
-                  emailWidget(),
-                  const SizedBox(height: p20),
-                  ElevatedButton(
-                      onPressed: () {
-                        final form = _formKey.currentState!;
-                        if (form.validate()) { 
-                          form.reset();
-                        }
-                      },
-                      child: Text("S'inscrire",
-                          style: bodySmall!.copyWith(color: Colors.white)))
-                ],
-              ),
+    return LayoutBuilder(builder: (context, constraints) {
+      if (constraints.maxWidth >= 1100) {
+        return  Container(
+          margin: const EdgeInsets.only(top: p50),
+          child: Form(
+            key: _formKey,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 600,
+                  child: Column(
+                    children: [
+                      text1Widget(),
+                      const SizedBox(height: p20),
+                      emailWidget(),
+                      const SizedBox(height: p20),
+                      ElevatedButton(
+                          onPressed: () {
+                            final form = _formKey.currentState!;
+                            if (form.validate()) {
+                              form.reset();
+                            }
+                          },
+                          child: Text("S'inscrire",
+                              style: bodySmall!.copyWith(color: Colors.white)))
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
-    );
+          ),
+        );
+      } else {
+        return Container(
+          margin: const EdgeInsets.only(top: p50),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                text1Widget(),
+                const SizedBox(height: p20),
+                emailWidget(),
+                const SizedBox(height: p20),
+                ElevatedButton(
+                    onPressed: () {
+                      final form = _formKey.currentState!;
+                      if (form.validate()) {
+                        form.reset();
+                      }
+                    },
+                    child: Text("S'inscrire",
+                        style: bodySmall!.copyWith(color: Colors.white)))
+              ],
+            ),
+          ),
+        );
+      }
+    });
+
+    
   }
 
-    Widget text1Widget() {
-      return Text("Inscrivez-vous à la newsletter ${InfoSystem().name()}",
+  Widget text1Widget() {
+    return Text(
+      "Inscrivez-vous à la newsletter ${InfoSystem().name()}",
+      textAlign: TextAlign.center,
         style: Theme.of(context)
             .textTheme
             .headline6!
             .copyWith(fontWeight: FontWeight.bold));
   }
-
 
   Widget emailWidget() {
     return Container(
@@ -72,6 +103,7 @@ class _NewsLetterState extends State<NewsLetter> {
         child: TextFormField(
           controller: emailController,
           decoration: InputDecoration(
+            prefixIcon: const Icon(Icons.email),
             border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
             labelText: 'Adresse mail',

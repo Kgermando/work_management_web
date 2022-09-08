@@ -17,9 +17,9 @@ class _SolutionHeaderState extends State<SolutionHeader> {
   Widget build(BuildContext context) {
     final bodyLarge = Theme.of(context).textTheme.bodyLarge;
     double width = MediaQuery.of(context).size.width;
-    if (MediaQuery.of(context).size.width >= 900) {
+    if (MediaQuery.of(context).size.width >= 1100) {
       width = MediaQuery.of(context).size.width / 1.5;
-    } else if (MediaQuery.of(context).size.width < 900 &&
+    } else if (MediaQuery.of(context).size.width < 1100 &&
         MediaQuery.of(context).size.width >= 650) {
       width = MediaQuery.of(context).size.width / 1.3;
     } else if (MediaQuery.of(context).size.width < 650) {
@@ -136,32 +136,44 @@ class _SolutionHeaderState extends State<SolutionHeader> {
               isActive: pageCurrente == SolutionRoutes.presentation,
               title: "Présentation",
               subTitle: "${InfoSystem().name()} fonctionnalités",
-              onPress: () {}),
+              onPress: () {
+                Navigator.pushNamed(context, SolutionRoutes.presentation);
+              }),
           const SizedBox(height: p20),
           OnHoverHeaderSubMenu(
-              isActive: pageCurrente == SolutionRoutes.presentation,
+              isActive: pageCurrente == SolutionRoutes.commerce,
               title: "Commerce",
               subTitle: "${InfoSystem().name()} pour le secteur du commerce",
-              onPress: () {}),
+              onPress: () {
+                Navigator.pushNamed(context, SolutionRoutes.commerce);
+              }),
           const SizedBox(height: p20),
           OnHoverHeaderSubMenu(
-              isActive: pageCurrente == SolutionRoutes.presentation,
+              isActive: pageCurrente == SolutionRoutes.industrie,
               title: "Industrie",
               subTitle: "${InfoSystem().name()} pour le secteur de l'industrie",
-              onPress: () {}),
+              onPress: () {
+                Navigator.pushNamed(context, SolutionRoutes.industrie);
+              }),
           const SizedBox(height: p20),
           OnHoverHeaderSubMenu(
-              isActive: pageCurrente == SolutionRoutes.presentation,
+              isActive:
+                  pageCurrente == SolutionRoutes.administrationSecteurPublic,
               title: "Administration et secteur public",
               subTitle: "${InfoSystem().name()} pour le Governement",
-              onPress: () {}),
+              onPress: () {
+                Navigator.pushNamed(
+                    context, SolutionRoutes.administrationSecteurPublic);
+              }),
           const SizedBox(height: p20),
           OnHoverHeaderSubMenu(
-              isActive: pageCurrente == SolutionRoutes.presentation,
+              isActive: pageCurrente == SolutionRoutes.services,
               title: "Services",
               subTitle:
                   "${InfoSystem().name()} Des solutions pour chaque service",
-              onPress: () {}),
+              onPress: () {
+                Navigator.pushNamed(context, SolutionRoutes.services);
+              }),
           const SizedBox(height: p20),
         ],
       ),
@@ -185,19 +197,25 @@ class _SolutionHeaderState extends State<SolutionHeader> {
               isActive: pageCurrente == SolutionRoutes.presentation,
               title: "Présentation",
               subTitle: "${InfoSystem().name()} fonctionnalités",
-              onPress: () {}),
+              onPress: () {
+                Navigator.pushNamed(context, SolutionRoutes.presentation);
+              }),
           const SizedBox(height: p20),
           OnHoverHeaderSubMenu(
-              isActive: pageCurrente == SolutionRoutes.presentation,
+              isActive: pageCurrente == SolutionRoutes.ongAssociation,
               title: "ONG",
               subTitle: "${InfoSystem().name()} pour les organisations",
-              onPress: () {}),
+              onPress: () {
+                Navigator.pushNamed(context, SolutionRoutes.ongAssociation);
+              }),
           const SizedBox(height: p20),
           OnHoverHeaderSubMenu(
-              isActive: pageCurrente == SolutionRoutes.presentation,
+              isActive: pageCurrente == SolutionRoutes.ongAssociation,
               title: "Associations",
               subTitle: "${InfoSystem().name()} pour les associations",
-              onPress: () {}),
+              onPress: () {
+                Navigator.pushNamed(context, SolutionRoutes.ongAssociation);
+              }),
           const SizedBox(height: p20),
         ],
       ),

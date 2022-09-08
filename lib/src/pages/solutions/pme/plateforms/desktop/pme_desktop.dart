@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:work_management_web/src/constants/app_theme.dart';
-import 'package:work_management_web/src/pages/solutions/pme/plateforms/desktop/components/pme_section_1.dart';
-import 'package:work_management_web/src/pages/solutions/pme/plateforms/desktop/components/pme_section_2.dart';
-import 'package:work_management_web/src/pages/solutions/pme/plateforms/desktop/components/pme_section_3.dart';
+import 'package:work_management_web/src/pages/solutions/pme/plateforms/desktop/components/section_1.dart';
+import 'package:work_management_web/src/pages/solutions/pme/plateforms/desktop/components/section_2.dart';
+import 'package:work_management_web/src/pages/solutions/pme/plateforms/desktop/components/section_3.dart';
 import 'package:work_management_web/src/widgets/newsletter.dart'; 
 
 class PMEDesktop extends StatefulWidget {
@@ -18,6 +18,7 @@ class _PMEDesktopState extends State<PMEDesktop> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: const [
+        SizedBox(height: p20),
         PMESection1(),
         SizedBox(height: p20),
         PMESection2(),

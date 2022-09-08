@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:work_management_web/src/constants/app_theme.dart';
+import 'package:work_management_web/src/utils/info_system.dart';
 
-class PMESection1 extends StatefulWidget {
-  const PMESection1({Key? key}) : super(key: key);
+class NewEntrepriseSection1 extends StatefulWidget {
+  const NewEntrepriseSection1({Key? key}) : super(key: key);
 
   @override
-  State<PMESection1> createState() => _PMESection1State();
+  State<NewEntrepriseSection1> createState() => _NewEntrepriseSection1State();
 }
 
-class _PMESection1State extends State<PMESection1> {
+class _NewEntrepriseSection1State extends State<NewEntrepriseSection1> {
   @override
   Widget build(BuildContext context) {
     final bodySmall = Theme.of(context).textTheme.bodySmall;
@@ -39,8 +40,23 @@ class _PMESection1State extends State<PMESection1> {
   }
 
   Widget text1Widget() {
-    return Text("Simplifiez vos méthodes de travail.",
-        style: Theme.of(context).textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold));
+    return RichText(
+      text: TextSpan(
+        children: [
+          TextSpan(text: "Rapprochez-vous de la perfection avec ",
+            style: Theme.of(context)
+                .textTheme
+                .headlineLarge!
+                .copyWith(fontWeight: FontWeight.bold, color: Colors.black)),
+        TextSpan(
+            text: InfoSystem().name(),
+            style: Theme.of(context)
+                .textTheme
+                .headlineLarge!
+                .copyWith(fontWeight: FontWeight.bold, color: Colors.red.shade700)),
+        ]
+      ), 
+    );
   }
 
   Widget text2Widget() {

@@ -16,9 +16,9 @@ class _RessourceHeaderState extends State<RessourceHeader> {
   Widget build(BuildContext context) {
     final bodyLarge = Theme.of(context).textTheme.bodyLarge;
     double width = MediaQuery.of(context).size.width;
-    if (MediaQuery.of(context).size.width >= 900) {
+    if (MediaQuery.of(context).size.width >= 1100) {
       width = MediaQuery.of(context).size.width / 1.5;
-    } else if (MediaQuery.of(context).size.width < 900 &&
+    } else if (MediaQuery.of(context).size.width < 1100 &&
         MediaQuery.of(context).size.width >= 650) {
       width = MediaQuery.of(context).size.width / 1.3;
     } else if (MediaQuery.of(context).size.width < 650) {

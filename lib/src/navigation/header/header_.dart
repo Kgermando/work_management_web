@@ -36,9 +36,12 @@ class Header extends StatelessWidget {
             if (Responsive.isMobile(context))
               Row(
                 children: [
-                  Image.asset(InfoSystem().logo(),
-                      width: 100,
-                      height: (Responsive.isDesktop(context)) ? 100 : 80),
+                  InkWell(
+                    onTap: () => Navigator.pushNamed(context, SolutionRoutes.presentation),
+                    child: Image.asset(InfoSystem().logo(),
+                        width: 120,
+                        height: (Responsive.isDesktop(context)) ? 100 : 80),
+                  ),
                 ],
               ),
             if (!Responsive.isMobile(context))

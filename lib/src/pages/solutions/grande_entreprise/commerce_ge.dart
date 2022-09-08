@@ -3,6 +3,7 @@ import 'package:work_management_web/src/constants/app_theme.dart';
 import 'package:work_management_web/src/navigation/drawer/drawer.dart';
 import 'package:work_management_web/src/navigation/footer/footer.dart';
 import 'package:work_management_web/src/navigation/header/header_.dart';
+import 'package:work_management_web/src/pages/solutions/grande_entreprise/plateforms/commerce_desktop.dart';
 
 class CommerceGE extends StatefulWidget {
   const CommerceGE({Key? key}) : super(key: key);
@@ -17,9 +18,9 @@ class _CommerceGEState extends State<CommerceGE> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    if (MediaQuery.of(context).size.width >= 900) {
+    if (MediaQuery.of(context).size.width >= 1100) {
       width = MediaQuery.of(context).size.width / 1.5;
-    } else if (MediaQuery.of(context).size.width < 900 &&
+    } else if (MediaQuery.of(context).size.width < 1100 &&
         MediaQuery.of(context).size.width >= 650) {
       width = MediaQuery.of(context).size.width / 1.3;
     } else if (MediaQuery.of(context).size.width < 650) {
@@ -42,9 +43,19 @@ class _CommerceGEState extends State<CommerceGE> {
                     children: [
                       Expanded(
                         child: Column(
-                          children: const [
-                            SizedBox(height: p50),
-                            Footer(),
+                          children: [
+                            LayoutBuilder(builder: (context, constraints) {
+                              if (constraints.maxWidth >= 1100) {
+                                return const CommercerDesktop();
+                              } else if (constraints.maxWidth < 1100 &&
+                                  constraints.maxWidth >= 650) {
+                                return Container();
+                              } else {
+                                return Container();
+                              }
+                            }),
+                            const SizedBox(height: p50),
+                            const Footer(),
                           ],
                         ),
                       ),
