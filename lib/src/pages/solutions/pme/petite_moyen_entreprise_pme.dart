@@ -3,6 +3,7 @@ import 'package:work_management_web/src/constants/app_theme.dart';
 import 'package:work_management_web/src/navigation/drawer/drawer.dart';
 import 'package:work_management_web/src/navigation/footer/footer.dart';
 import 'package:work_management_web/src/navigation/header/header_.dart';
+import 'package:work_management_web/src/pages/solutions/pme/plateforms/desktop/pme_desktop.dart';
 
 class PetiteMoyenEntreprisePME extends StatefulWidget {
   const PetiteMoyenEntreprisePME({Key? key}) : super(key: key);
@@ -18,9 +19,9 @@ class _PetiteMoyenEntreprisePMEState extends State<PetiteMoyenEntreprisePME> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    if (MediaQuery.of(context).size.width >= 1100) {
+    if (MediaQuery.of(context).size.width >= 900) {
       width = MediaQuery.of(context).size.width / 1.5;
-    } else if (MediaQuery.of(context).size.width < 1100 &&
+    } else if (MediaQuery.of(context).size.width < 900 &&
         MediaQuery.of(context).size.width >= 650) {
       width = MediaQuery.of(context).size.width / 1.3;
     } else if (MediaQuery.of(context).size.width < 650) {
@@ -45,11 +46,11 @@ class _PetiteMoyenEntreprisePMEState extends State<PetiteMoyenEntreprisePME> {
                         child: Column(
                           children: [
                             LayoutBuilder(builder: (context, constraints) {
-                              if (constraints.maxWidth >= 1100) {
-                                return Container();
-                              } else if (constraints.maxWidth < 1100 &&
+                              if (constraints.maxWidth >= 900) {
+                                return const PMEDesktop();
+                              } else if (constraints.maxWidth < 900 &&
                                   constraints.maxWidth >= 650) {
-                                return Container();
+                                return const PMEDesktop();
                               } else {
                                 return Container();
                               }

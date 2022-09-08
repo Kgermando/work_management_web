@@ -3,11 +3,7 @@ import 'package:work_management_web/src/constants/app_theme.dart';
 import 'package:work_management_web/src/navigation/drawer/drawer.dart';
 import 'package:work_management_web/src/navigation/footer/footer.dart';
 import 'package:work_management_web/src/navigation/header/header_.dart';
-import 'package:work_management_web/src/pages/solutions/presentation/components/evenement_presentation.dart';
-import 'package:work_management_web/src/pages/solutions/presentation/components/presentation_1_widget.dart';
-import 'package:work_management_web/src/pages/solutions/presentation/components/presentation_2_widget.dart';
 import 'package:work_management_web/src/pages/solutions/presentation/plateforms/desktop/page_desktop.dart';
-import 'package:work_management_web/src/pages/solutions/presentation/plateforms/desktop/presentation_section_1.dart';
 
 class PresentationSolution extends StatefulWidget {
   const PresentationSolution({Key? key}) : super(key: key);
@@ -22,9 +18,9 @@ class _PresentationSolutionState extends State<PresentationSolution> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    if (MediaQuery.of(context).size.width >= 1100) {
+    if (MediaQuery.of(context).size.width >= 900) {
       width = MediaQuery.of(context).size.width / 1.5;
-    } else if (MediaQuery.of(context).size.width < 1100 &&
+    } else if (MediaQuery.of(context).size.width < 900 &&
         MediaQuery.of(context).size.width >= 650) {
       width = MediaQuery.of(context).size.width / 1.3;
     } else if (MediaQuery.of(context).size.width < 650) {
@@ -46,11 +42,11 @@ class _PresentationSolutionState extends State<PresentationSolution> {
                   children: [
                     Expanded(
                       child: Column(
-                        children: [ 
+                        children: [
                           LayoutBuilder(builder: (context, constraints) {
-                            if (constraints.maxWidth >= 1100) {
+                            if (constraints.maxWidth >= 900) {
                               return const PageDesktop();
-                            } else if (constraints.maxWidth < 1100 &&
+                            } else if (constraints.maxWidth < 900 &&
                                 constraints.maxWidth >= 650) {
                               return Container();
                             } else {

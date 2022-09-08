@@ -6,6 +6,7 @@ import 'package:url_strategy/url_strategy.dart';
 import 'package:work_management_web/src/providers/controller.dart';
 import 'package:work_management_web/src/providers/theme_provider.dart';
 import 'package:work_management_web/src/routes/routes.dart';
+import 'package:work_management_web/src/utils/info_system.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         builder: (context, _) {
           final themeProvider = Provider.of<ThemeProvider>(context);
           return MaterialApp(
-            title: 'PAM Tech',
+            title: InfoSystem().name(),
             themeMode: themeProvider.themeMode,
             theme: MyThemes.lightTheme,
             darkTheme: MyThemes.darkTheme,

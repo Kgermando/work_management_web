@@ -17,9 +17,9 @@ class _SolutionHeaderState extends State<SolutionHeader> {
   Widget build(BuildContext context) {
     final bodyLarge = Theme.of(context).textTheme.bodyLarge;
     double width = MediaQuery.of(context).size.width;
-    if (MediaQuery.of(context).size.width >= 1100) {
+    if (MediaQuery.of(context).size.width >= 900) {
       width = MediaQuery.of(context).size.width / 1.5;
-    } else if (MediaQuery.of(context).size.width < 1100 &&
+    } else if (MediaQuery.of(context).size.width < 900 &&
         MediaQuery.of(context).size.width >= 650) {
       width = MediaQuery.of(context).size.width / 1.3;
     } else if (MediaQuery.of(context).size.width < 650) {
@@ -92,7 +92,7 @@ class _SolutionHeaderState extends State<SolutionHeader> {
               }),
           const SizedBox(height: p20),
           OnHoverHeaderSubMenu(
-              isActive: pageCurrente == SolutionRoutes.presentation,
+              isActive: pageCurrente == SolutionRoutes.pme,
               title: "PME",
               subTitle: "Outils de productivité pour les PME",
               onPress: () {
@@ -100,16 +100,20 @@ class _SolutionHeaderState extends State<SolutionHeader> {
               }),
           const SizedBox(height: p20),
           OnHoverHeaderSubMenu(
-              isActive: pageCurrente == SolutionRoutes.presentation,
+              isActive: pageCurrente == SolutionRoutes.newEntreprise,
               title: "Nouvelle entreprise",
               subTitle: "Outils pour les nouvelles entreprises",
-              onPress: () {}),
+              onPress: () {
+                Navigator.pushNamed(context, SolutionRoutes.newEntreprise);
+              }),
           const SizedBox(height: p20),
           OnHoverHeaderSubMenu(
-              isActive: pageCurrente == SolutionRoutes.presentation,
+              isActive: pageCurrente == SolutionRoutes.startUp,
               title: "Start-up",
               subTitle: "Outils de productivité pour les start-up",
-              onPress: () {}),
+              onPress: () {
+                Navigator.pushNamed(context, SolutionRoutes.startUp);
+              }),
         ],
       ),
     );

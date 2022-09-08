@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:work_management_web/src/constants/role_theme.dart';
 
 // Color mainColor = const Color(0xFF009688);
-Color mainColor = Colors.teal.shade700;
+Color mainColor = Colors.blue.shade700;
 Color secondaryColor = Colors.red.shade700;
 
 Color background = const Color(0xFFf2f6ff);

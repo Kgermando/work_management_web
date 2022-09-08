@@ -17,9 +17,9 @@ class _ProduitHeaderState extends State<ProduitHeader> {
   Widget build(BuildContext context) {
     final bodyLarge = Theme.of(context).textTheme.bodyLarge;
     double width = MediaQuery.of(context).size.width;
-    if (MediaQuery.of(context).size.width >= 1100) {
+    if (MediaQuery.of(context).size.width >= 900) {
       width = MediaQuery.of(context).size.width / 1.5;
-    } else if (MediaQuery.of(context).size.width < 1100 &&
+    } else if (MediaQuery.of(context).size.width < 900 &&
         MediaQuery.of(context).size.width >= 650) {
       width = MediaQuery.of(context).size.width / 1.3;
     } else if (MediaQuery.of(context).size.width < 650) {

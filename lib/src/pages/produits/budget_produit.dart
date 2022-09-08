@@ -17,9 +17,9 @@ class _BudgetProduitState extends State<BudgetProduit> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    if (MediaQuery.of(context).size.width >= 1100) {
+    if (MediaQuery.of(context).size.width >= 900) {
       width = MediaQuery.of(context).size.width / 1.5;
-    } else if (MediaQuery.of(context).size.width < 1100 &&
+    } else if (MediaQuery.of(context).size.width < 900 &&
         MediaQuery.of(context).size.width >= 650) {
       width = MediaQuery.of(context).size.width / 1.3;
     } else if (MediaQuery.of(context).size.width < 650) {
@@ -44,9 +44,9 @@ class _BudgetProduitState extends State<BudgetProduit> {
                         child: Column(
                           children: [
                             LayoutBuilder(builder: (context, constraints) {
-                              if (constraints.maxWidth >= 1100) {
+                              if (constraints.maxWidth >= 900) {
                                 return Container();
-                              } else if (constraints.maxWidth < 1100 &&
+                              } else if (constraints.maxWidth < 900 &&
                                   constraints.maxWidth >= 650) {
                                 return Container();
                               } else {
